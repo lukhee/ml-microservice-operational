@@ -1,6 +1,6 @@
 <paste log output from Kubernetes-mediated prediction, here>
 
- kubectl logs ml-microservices-7dc4666b79-s7sgk --tail 10
+ kubectl logs ml-microservices-3-5bb658698b-2p4g2 --tail 10
 {'CHAS': {'0': 0}, 'RM': {'0': 6.575}, 'TAX': {'0': 296.0}, 'PTRATIO': {'0': 15.3}, 'B': {'0': 396.9}, 'LSTAT': {'0': 4.98}}
 [2022-10-21 20:36:08,991] INFO in app: Inference payload DataFrame: 
    CHAS     RM    TAX  PTRATIO      B  LSTAT
@@ -13,18 +13,23 @@
 192.168.49.92 - - [21/Oct/2022 20:36:09] "POST /predict HTTP/1.1" 200 -
 
 
-balogunluqman@BALOGUNs-MacBook-Pro project-ml-microservice-kubernetes % kubectl get nodes
-NAME                             STATUS   ROLES    AGE     VERSION
-ip-192-168-24-222.ec2.internal   Ready    <none>   4m58s   v1.22.12-eks-ba74326
-ip-192-168-61-45.ec2.internal    Ready    <none>   4m54s   v1.22.12-eks-ba74326
+balogunluqman@BALOGUNs-MacBook-Pro project-ml-microservice-kubernetes % ./run_kubernetes.sh      
+pod/ml-microservices-3 created
+deployment.apps/ml-microservices-3 created
+NAME                                  READY   STATUS              RESTARTS   AGE
+ml-microservices-2-65c79d64cc-75mcn   1/1     Running             0          113s
+ml-microservices-3                    1/1     Running             0          2s
+ml-microservices-3-5bb658698b-2p4g2   0/1     ContainerCreating   0          1s
+ml-microservices-7dc4666b79-v577d     1/1     Running             0          112s
+service/lb-service exposed
+balogunluqman@BALOGUNs-MacBook-Pro project-ml-microservice-kubernetes % 
+
+
+<Getting the pods result after success/>
 
 balogunluqman@BALOGUNs-MacBook-Pro project-ml-microservice-kubernetes % kubectl get pods
 NAME                                  READY   STATUS    RESTARTS   AGE
-ml-microservices                      1/1     Running   0          15m
-ml-microservices-2-65c79d64cc-xh2qn   1/1     Running   0          13m
-ml-microservices-7dc4666b79-spmqm     1/1     Running   0          14m
-
-balogunluqman@BALOGUNs-MacBook-Pro project-ml-microservice-kubernetes % kubectl get svc     
-NAME         TYPE           CLUSTER-IP     EXTERNAL-IP                                                               PORT(S)        AGE
-kubernetes   ClusterIP      10.100.0.1     <none>                                                                    443/TCP        32m
-lb-service   LoadBalancer   10.100.92.12   a3dbfb02f35ee471a8e20f7e99c6d87e-1628267240.us-east-1.elb.amazonaws.com   80:31752/TCP   13m
+ml-microservices-2-65c79d64cc-75mcn   1/1     Running   0          7m11s
+ml-microservices-3                    1/1     Running   0          5m20s
+ml-microservices-3-5bb658698b-2p4g2   1/1     Running   0          5m19s
+ml-microservices-7dc4666b79-v577d     1/1     Running   0          7m10s
