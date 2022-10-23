@@ -11,3 +11,20 @@
 [2022-10-21 20:36:09,001] INFO in app: Prediction_result: 
 {'CHAS': {'0': 0}, 'RM': {'0': 6.575}, 'TAX': {'0': 296.0}, 'PTRATIO': {'0': 15.3}, 'B': {'0': 396.9}, 'LSTAT': {'0': 4.98}}
 192.168.49.92 - - [21/Oct/2022 20:36:09] "POST /predict HTTP/1.1" 200 -
+
+
+balogunluqman@BALOGUNs-MacBook-Pro project-ml-microservice-kubernetes % kubectl get nodes
+NAME                             STATUS   ROLES    AGE     VERSION
+ip-192-168-24-222.ec2.internal   Ready    <none>   4m58s   v1.22.12-eks-ba74326
+ip-192-168-61-45.ec2.internal    Ready    <none>   4m54s   v1.22.12-eks-ba74326
+
+balogunluqman@BALOGUNs-MacBook-Pro project-ml-microservice-kubernetes % kubectl get pods
+NAME                                  READY   STATUS    RESTARTS   AGE
+ml-microservices                      1/1     Running   0          15m
+ml-microservices-2-65c79d64cc-xh2qn   1/1     Running   0          13m
+ml-microservices-7dc4666b79-spmqm     1/1     Running   0          14m
+
+balogunluqman@BALOGUNs-MacBook-Pro project-ml-microservice-kubernetes % kubectl get svc     
+NAME         TYPE           CLUSTER-IP     EXTERNAL-IP                                                               PORT(S)        AGE
+kubernetes   ClusterIP      10.100.0.1     <none>                                                                    443/TCP        32m
+lb-service   LoadBalancer   10.100.92.12   a3dbfb02f35ee471a8e20f7e99c6d87e-1628267240.us-east-1.elb.amazonaws.com   80:31752/TCP   13m
