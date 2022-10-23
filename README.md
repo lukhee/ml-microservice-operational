@@ -1,6 +1,6 @@
 <include a CircleCI status badge, here>
 ### CircleCi Status
-[![CircleCI](https://dl.circleci.com/status-badge/img/gh/dev-luqman/ml-microservices-operationalisation/tree/main.svg?style=svg)](https://dl.circleci.com/status-badge/redirect/gh/dev-luqman/ml-microservices-operationalisation/tree/main)
+[![CircleCI](https://dl.circleci.com/status-badge/img/gh/lukhee/ml-microservice-operational/tree/main.svg?style=svg)](https://dl.circleci.com/status-badge/redirect/gh/lukhee/ml-microservice-operational/tree/main)
 
 ## Project Overview
 
