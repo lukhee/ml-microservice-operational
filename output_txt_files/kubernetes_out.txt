@@ -1,0 +1,13 @@
+<paste log output from Kubernetes-mediated prediction, here>
+
+ kubectl logs ml-microservices-7dc4666b79-s7sgk --tail 10
+{'CHAS': {'0': 0}, 'RM': {'0': 6.575}, 'TAX': {'0': 296.0}, 'PTRATIO': {'0': 15.3}, 'B': {'0': 396.9}, 'LSTAT': {'0': 4.98}}
+[2022-10-21 20:36:08,991] INFO in app: Inference payload DataFrame: 
+   CHAS     RM    TAX  PTRATIO      B  LSTAT
+0     0  6.575  296.0     15.3  396.9   4.98
+[2022-10-21 20:36:08,998] INFO in app: Scaling Payload: 
+   CHAS     RM    TAX  PTRATIO      B  LSTAT
+0     0  6.575  296.0     15.3  396.9   4.98
+[2022-10-21 20:36:09,001] INFO in app: Prediction_result: 
+{'CHAS': {'0': 0}, 'RM': {'0': 6.575}, 'TAX': {'0': 296.0}, 'PTRATIO': {'0': 15.3}, 'B': {'0': 396.9}, 'LSTAT': {'0': 4.98}}
+192.168.49.92 - - [21/Oct/2022 20:36:09] "POST /predict HTTP/1.1" 200 -
